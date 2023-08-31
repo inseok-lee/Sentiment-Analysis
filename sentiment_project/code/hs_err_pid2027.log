@@ -1,0 +1,935 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x000000021c8c2aec, pid=2027, tid=259
+#
+# JRE version:  (15.0.6+5) (build )
+# Java VM: OpenJDK 64-Bit Server VM (15.0.6+5-MTS, mixed mode, tiered, compressed oops, g1 gc, bsd-aarch64)
+# Problematic frame:
+# C  [dyld+0x54aec]  _ZNK5dyld39MachOFile14forEachSegmentEU13block_pointerFvRKNS0_11SegmentInfoERbE+0x28
+#
+# No core dump will be written. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dfile.encoding=UTF8 -ea -Xmx1024m 
+
+Host: MacBookAir10,1 arm64 1 MHz, 8 cores, 16G, Darwin 22.0.0
+Time: Fri Jul 15 10:34:40 2022 KST elapsed time: 0.003533 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000000014a43f800):  JavaThread "Unknown thread" [_thread_in_vm, id=259, stack(0x000000016da8c000,0x000000016fa8c000)]
+
+Stack: [0x000000016da8c000,0x000000016fa8c000],  sp=0x000000016fa84be0,  free space=32738k
+Native frames: (J=compiled Java code, A=aot compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [dyld+0x54aec]  _ZNK5dyld39MachOFile14forEachSegmentEU13block_pointerFvRKNS0_11SegmentInfoERbE+0x28
+C  [dyld+0x54a9c]  _ZNK5dyld39MachOFile20preferredLoadAddressEv+0x7c
+C  [dyld+0x2103c]  _ZNK5dyld416JustInTimeLoader8containsERNS_12RuntimeStateEPKvPS4_PyPh+0x60
+C  [dyld+0x3a1c8]  ___ZN5dyld44APIs19findImageContainingEPv_block_invoke+0x7c
+C  [dyld+0xd338]  _ZN5dyld412RuntimeState19withLoadersReadLockEU13block_pointerFvvE+0x5c
+C  [dyld+0x36ce0]  _ZN5dyld44APIs19findImageContainingEPv+0x84
+C  [dyld+0x3a4c8]  _ZN5dyld44APIs11dlopen_fromEPKciPv+0x1bc
+V  [libjvm.dylib+0x711a64]  _ZN2os8dll_loadEPKcPci+0x4c
+V  [libjvm.dylib+0x70c2cc]  _ZN2os19native_java_libraryEv+0x64
+V  [libjvm.dylib+0x1f9984]  _ZN11ClassLoader17load_java_libraryEv+0x24
+V  [libjvm.dylib+0x1fb734]  _ZN11ClassLoader10initializeEv+0x4dc
+V  [libjvm.dylib+0x3beb4c]  _Z12init_globalsv+0x38
+V  [libjvm.dylib+0x8c834c]  _ZN7Threads9create_vmEP14JavaVMInitArgsPb+0x30c
+V  [libjvm.dylib+0x453360]  JNI_CreateJavaVM+0x78
+C  [_jpype.cpython-310-darwin.so+0x11b40]  _ZN9JPContext8startJVMERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEERKNS0_6vectorIS6_NS4_IS6_EEEEbbb+0xd8
+C  [_jpype.cpython-310-darwin.so+0x3ffc0]  _ZL18PyJPModule_startupP7_objectS0_+0x304
+C  [python3.10+0xab634]  cfunction_call+0xd0
+C  [python3.10+0x57c0c]  _PyObject_MakeTpCall+0x268
+C  [python3.10+0x14e720]  call_function+0x2a4
+C  [python3.10+0x14a268]  _PyEval_EvalFrameDefault+0x65b8
+C  [python3.10+0x14340c]  _PyEval_Vector+0x7ec
+C  [python3.10+0x14e5f8]  call_function+0x17c
+C  [python3.10+0x14a348]  _PyEval_EvalFrameDefault+0x6698
+C  [python3.10+0x14340c]  _PyEval_Vector+0x7ec
+C  [python3.10+0x14e5f8]  call_function+0x17c
+C  [python3.10+0x14a268]  _PyEval_EvalFrameDefault+0x65b8
+C  [python3.10+0x14340c]  _PyEval_Vector+0x7ec
+C  [python3.10+0x57ec0]  _PyObject_FastCallDictTstate+0x140
+C  [python3.10+0x58ab4]  _PyObject_Call_Prepend+0xa4
+C  [python3.10+0xd07dc]  slot_tp_init+0xd8
+C  [python3.10+0xc8ccc]  type_call+0x154
+C  [python3.10+0x57c0c]  _PyObject_MakeTpCall+0x268
+C  [python3.10+0x14e720]  call_function+0x2a4
+C  [python3.10+0x14a2d8]  _PyEval_EvalFrameDefault+0x6628
+C  [python3.10+0x14340c]  _PyEval_Vector+0x7ec
+C  [python3.10+0x142bf0]  PyEval_EvalCode+0x78
+C  [python3.10+0x13e8f0]  builtin_exec+0x344
+C  [python3.10+0xac310]  cfunction_vectorcall_FASTCALL+0xc8
+C  [python3.10+0x14e5f8]  call_function+0x17c
+C  [python3.10+0x14a2d8]  _PyEval_EvalFrameDefault+0x6628
+C  [python3.10+0x708b4]  gen_send_ex2+0x20c
+C  [python3.10+0x146490]  _PyEval_EvalFrameDefault+0x27e0
+C  [python3.10+0x708b4]  gen_send_ex2+0x20c
+C  [python3.10+0x146490]  _PyEval_EvalFrameDefault+0x27e0
+C  [python3.10+0x708b4]  gen_send_ex2+0x20c
+C  [python3.10+0x70e88]  gen_send+0x34
+C  [python3.10+0x652c0]  method_vectorcall_O+0x98
+C  [python3.10+0x14e5f8]  call_function+0x17c
+C  [python3.10+0x14a240]  _PyEval_EvalFrameDefault+0x6590
+C  [python3.10+0x14340c]  _PyEval_Vector+0x7ec
+C  [python3.10+0x14e5f8]  call_function+0x17c
+C  [python3.10+0x14a2d8]  _PyEval_EvalFrameDefault+0x6628
+C  [python3.10+0x14340c]  _PyEval_Vector+0x7ec
+C  [python3.10+0x14e5f8]  call_function+0x17c
+C  [python3.10+0x14a240]  _PyEval_EvalFrameDefault+0x6590
+C  [python3.10+0x14340c]  _PyEval_Vector+0x7ec
+C  [python3.10+0x5b2c4]  method_vectorcall+0xa4
+C  [python3.10+0x5844c]  PyVectorcall_Call+0x9c
+C  [python3.10+0x14a5e0]  _PyEval_EvalFrameDefault+0x6930
+C  [python3.10+0x14340c]  _PyEval_Vector+0x7ec
+C  [python3.10+0x5b2c4]  method_vectorcall+0xa4
+C  [python3.10+0x14e5f8]  call_function+0x17c
+C  [python3.10+0x14a348]  _PyEval_EvalFrameDefault+0x6698
+C  [python3.10+0x708b4]  gen_send_ex2+0x20c
+C  [python3.10+0x146490]  _PyEval_EvalFrameDefault+0x27e0
+C  [python3.10+0x708b4]  gen_send_ex2+0x20c
+C  [python3.10+0x146490]  _PyEval_EvalFrameDefault+0x27e0
+C  [python3.10+0x708b4]  gen_send_ex2+0x20c
+C  [python3.10+0x146490]  _PyEval_EvalFrameDefault+0x27e0
+C  [python3.10+0x708b4]  gen_send_ex2+0x20c
+C  [python3.10+0x146490]  _PyEval_EvalFrameDefault+0x27e0
+C  [python3.10+0x708b4]  gen_send_ex2+0x20c
+C  [_asyncio.cpython-310-darwin.so+0x807c]  task_step+0x224
+C  [python3.10+0xabf7c]  cfunction_vectorcall_O+0xfc
+C  [python3.10+0x1679d4]  context_run+0x15c
+C  [python3.10+0xac1d4]  cfunction_vectorcall_FASTCALL_KEYWORDS+0x70
+C  [python3.10+0x14a5e0]  _PyEval_EvalFrameDefault+0x6930
+C  [python3.10+0x14340c]  _PyEval_Vector+0x7ec
+C  [python3.10+0x14e5f8]  call_function+0x17c
+C  [python3.10+0x14a240]  _PyEval_EvalFrameDefault+0x6590
+C  [python3.10+0x14340c]  _PyEval_Vector+0x7ec
+C  [python3.10+0x14e5f8]  call_function+0x17c
+C  [python3.10+0x14a240]  _PyEval_EvalFrameDefault+0x6590
+C  [python3.10+0x14340c]  _PyEval_Vector+0x7ec
+C  [python3.10+0x14e5f8]  call_function+0x17c
+C  [python3.10+0x14a240]  _PyEval_EvalFrameDefault+0x6590
+C  [python3.10+0x14340c]  _PyEval_Vector+0x7ec
+C  [python3.10+0x14e5f8]  call_function+0x17c
+C  [python3.10+0x14a240]  _PyEval_EvalFrameDefault+0x6590
+C  [python3.10+0x14340c]  _PyEval_Vector+0x7ec
+C  [python3.10+0x14e5f8]  call_function+0x17c
+C  [python3.10+0x14a240]  _PyEval_EvalFrameDefault+0x6590
+C  [python3.10+0x14340c]  _PyEval_Vector+0x7ec
+C  [python3.10+0x5b2c4]  method_vectorcall+0xa4
+C  [python3.10+0x14e5f8]  call_function+0x17c
+C  [python3.10+0x14a268]  _PyEval_EvalFrameDefault+0x65b8
+C  [python3.10+0x14340c]  _PyEval_Vector+0x7ec
+C  [python3.10+0x142bf0]  PyEval_EvalCode+0x78
+C  [python3.10+0x13e8f0]  builtin_exec+0x344
+C  [python3.10+0xac310]  cfunction_vectorcall_FASTCALL+0xc8
+...<more frames>...
+
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 2 (SEGV_ACCERR), si_addr: 0x000000016da8c004
+
+Registers:
+ x0=0x000000016fa84c48  x1=0x0000000000000000  x2=0x000000017a835a64  x3=0x000000016fa84da8
+ x4=0x000000016fa84da0  x5=0x000000016fa84d9f  x6=0x0000000000000000  x7=0x0000000000000cf0
+ x8=0x000000016fa84ca0  x9=0x0000000233f35318 x10=0x000000021c8e8000 x11=0x00000001429bc000
+x12=0x0000000000000000 x13=0x0000000000008000 x14=0x0000000000007aa0 x15=0x00000000001e2800
+x16=0x000000021c8c2dcc x17=0x6ae100016fa84c78 x18=0x0000000000000000 x19=0x000000016fa84c78
+x20=0x000000016da8c000 x21=0x000000016fa84da0 x22=0x000000016fa84da8 x23=0x000000017a835a64
+x24=0x000000016fa84d30 x25=0x000000017abef9f0 x26=0x0000000190ef3420 x27=0x000000017ac38000
+x28=0x000000017ac38000  fp=0x000000016fa84c60  lr=0x000000021c8c2aec  sp=0x000000016fa84be0
+pc=0x000000021c8c2aec cpsr=0x0000000080001000
+Top of Stack: (sp=0x000000016fa84be0)
+0x000000016fa84be0:   0000000500000000 0000000230132fd8
+0x000000016fa84bf0:   000000017ac38000 000000017ac38000
+0x000000016fa84c00:   0000000190ef3420 000000017abef9f0
+0x000000016fa84c10:   000000016fa84d30 000000017a835a64
+0x000000016fa84c20:   000000016fa84da8 000000016fa84da0
+0x000000016fa84c30:   00000001429a4000 000000016fa84ce0
+0x000000016fa84c40:   000000016fa84cd0 0000000000000000
+0x000000016fa84c50:   000000016da8c000 000000016fa84d9f
+0x000000016fa84c60:   000000016fa84cd0 154680021c8c2a9c
+0x000000016fa84c70:   0000000233f352e8 0000000230132fd8
+0x000000016fa84c80:   0000000042000000 000000021c8c2dcc
+0x000000016fa84c90:   0000000233f35318 000000016fa84ca0
+0x000000016fa84ca0:   0000000000000000 000000016fa84ca0
+0x000000016fa84cb0:   0000002000000000 0000000000000000
+0x000000016fa84cc0:   000000016da8c000 000000016fa84d9f
+0x000000016fa84cd0:   000000016fa84d80 3f0280021c88f03c
+0x000000016fa84ce0:   0000000230132fd8 0000000042000000
+0x000000016fa84cf0:   000000021c88f0d4 0000000233f33528
+0x000000016fa84d00:   000000016fa84d30 00000001429a4000
+0x000000016fa84d10:   000000017a835a64 000000016fa84da8
+0x000000016fa84d20:   000000016fa84da0 000000016fa84d9f
+0x000000016fa84d30:   0000000000000000 000000016fa84d30
+0x000000016fa84d40:   0000002000000000 071200021c892d00
+0x000000016fa84d50:   0000000145e9f898 00000000000001c8
+0x000000016fa84d60:   0000000145e9f898 0000000145ebbd10
+0x000000016fa84d70:   00000001006edc30 000000016fa84e18
+0x000000016fa84d80:   000000016fa84de0 dc7a00021c8a81c8
+0x000000016fa84d90:   000003b300000000 00000000ffff0208
+0x000000016fa84da0:   0000000000000000 0000000000000000
+0x000000016fa84db0:   0000000000000001 000000017a835a64
+0x000000016fa84dc0:   000000016fa8b448 00000001f3b741e8
+0x000000016fa84dd0:   00000001006edc30 000000016fa84e18 
+
+Instructions: (pc=0x000000021c8c2aec)
+0x000000021c8c29ec:   39000128 aa1403e0 97ffff83 aa0003f5
+0x000000021c8c29fc:   aa1403e0 94000008 cb0002a8 f9401a69
+0x000000021c8c2a0c:   f9000128 a9427bfd a9414ff4 a8c357f6
+0x000000021c8c2a1c:   d65f0fff d503237f d101c3ff a9054ff4
+0x000000021c8c2a2c:   a9067bfd 910183fd 9100c3e8 a90323ff
+0x000000021c8c2a3c:   d0000129 fd42ad20 fd0023e0 f90027ff
+0x000000021c8c2a4c:   910023e9 9009c390 913f6210 aa0903f1
+0x000000021c8c2a5c:   f2ed5c31 dac10a30 f90007f0 d000012a
+0x000000021c8c2a6c:   fd429940 fd000be0 91004129 90000010
+0x000000021c8c2a7c:   91373210 dac10130 f00bb389 910c6129
+0x000000021c8c2a8c:   a901a7f0 f90017e8 910023e1 9400000b
+0x000000021c8c2a9c:   f9401fe8 f9400d13 9100c3e0 52800101
+0x000000021c8c2aac:   97feb4d3 aa1303e0 a9467bfd a9454ff4
+0x000000021c8c2abc:   9101c3ff d65f0fff d503237f d10243ff
+0x000000021c8c2acc:   a9074ff4 a9087bfd 910203fd aa0103f3
+0x000000021c8c2adc:   aa0003f4 d10063a0 52800001 97feb5b0
+0x000000021c8c2aec:   b9400688 71001d1f 1a9f17e8 d100e3a9
+0x000000021c8c2afc:   a93ca7bf d000012a fd42ad40 fc1d83a0
+0x000000021c8c2b0c:   b81e03bf 910023ea 9009c390 913f6210
+0x000000021c8c2b1c:   aa0a03f1 f2ed5c31 dac10a30 f90007f0
+0x000000021c8c2b2c:   d000012b fd429960 fd000be0 9100414a
+0x000000021c8c2b3c:   90000010 912e7210 dac10150 f00bb38a
+0x000000021c8c2b4c:   910ba14a a901abf0 a90353e9 f90017f3
+0x000000021c8c2b5c:   390103e8 d10063a1 910023e2 aa1403e0
+0x000000021c8c2b6c:   97feb591 d10063a0 97feb5f8 d100e3a0
+0x000000021c8c2b7c:   52800101 97feb49e d10063a0 97feb48f
+0x000000021c8c2b8c:   a9487bfd a9474ff4 910243ff d65f0fff
+0x000000021c8c2b9c:   d503237f d10183ff a9044ff4 a9057bfd
+0x000000021c8c2bac:   910143fd aa0003f3 f9401808 b9400029
+0x000000021c8c2bbc:   7100053f 54000300 7100653f 54000fa1
+0x000000021c8c2bcc:   f9401029 9101202a b940402b 52800a0c
+0x000000021c8c2bdc:   9b0c296b eb0a017f 54000529 5280000c 
+
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x000000017ac3a430, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x000000014a43f800 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=259, stack(0x000000016da8c000,0x000000016fa8c000)]
+
+Threads with active compile tasks:
+
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap address: 0x0000000000000000, size: 0 MB, Compressed Oops mode: 32-bit
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+Deoptimization events (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (2 events):
+Event: 0.003 Protecting memory [0x000000016da8c000,0x000000016da98000] with protection modes 0
+Event: 0.003 Protecting memory [0x000000016da8c000,0x000000016da90000] with protection modes 3
+
+
+Dynamic libraries:
+0x000000019c4cf000 	/usr/lib/libSystem.B.dylib
+0x000000019c4c9000 	/usr/lib/system/libcache.dylib
+0x000000019c486000 	/usr/lib/system/libcommonCrypto.dylib
+0x000000019c4b0000 	/usr/lib/system/libcompiler_rt.dylib
+0x000000019c4a6000 	/usr/lib/system/libcopyfile.dylib
+0x0000000190caa000 	/usr/lib/system/libcorecrypto.dylib
+0x0000000190d61000 	/usr/lib/system/libdispatch.dylib
+0x0000000190ef1000 	/usr/lib/system/libdyld.dylib
+0x000000019c4bf000 	/usr/lib/system/libkeymgr.dylib
+0x000000019c464000 	/usr/lib/system/libmacho.dylib
+0x000000019bb75000 	/usr/lib/system/libquarantine.dylib
+0x000000019c4bc000 	/usr/lib/system/libremovefile.dylib
+0x0000000195b47000 	/usr/lib/system/libsystem_asl.dylib
+0x0000000190c48000 	/usr/lib/system/libsystem_blocks.dylib
+0x0000000190dab000 	/usr/lib/system/libsystem_c.dylib
+0x000000019c4b4000 	/usr/lib/system/libsystem_collections.dylib
+0x000000019b0c0000 	/usr/lib/system/libsystem_configuration.dylib
+0x000000019a095000 	/usr/lib/system/libsystem_containermanager.dylib
+0x000000019c187000 	/usr/lib/system/libsystem_coreservices.dylib
+0x0000000193d09000 	/usr/lib/system/libsystem_darwin.dylib
+0x000000019c4c0000 	/usr/lib/system/libsystem_dnssd.dylib
+0x0000000190da8000 	/usr/lib/system/libsystem_featureflags.dylib
+0x0000000190f1d000 	/usr/lib/system/libsystem_info.dylib
+0x000000019c42b000 	/usr/lib/system/libsystem_m.dylib
+0x0000000190d35000 	/usr/lib/system/libsystem_malloc.dylib
+0x0000000195ac8000 	/usr/lib/system/libsystem_networkextension.dylib
+0x000000019416e000 	/usr/lib/system/libsystem_notify.dylib
+0x000000019b0c5000 	/usr/lib/system/libsystem_sandbox.dylib
+0x000000019c4b9000 	/usr/lib/system/libsystem_secinit.dylib
+0x0000000190eab000 	/usr/lib/system/libsystem_kernel.dylib
+0x0000000190f15000 	/usr/lib/system/libsystem_platform.dylib
+0x0000000190ee4000 	/usr/lib/system/libsystem_pthread.dylib
+0x00000001972e8000 	/usr/lib/system/libsystem_symptoms.dylib
+0x0000000190c90000 	/usr/lib/system/libsystem_trace.dylib
+0x000000019c493000 	/usr/lib/system/libunwind.dylib
+0x0000000190c4d000 	/usr/lib/system/libxpc.dylib
+0x0000000190e93000 	/usr/lib/libc++abi.dylib
+0x0000000190c04000 	/usr/lib/libobjc.A.dylib
+0x000000019c49e000 	/usr/lib/liboah.dylib
+0x0000000190e2c000 	/usr/lib/libc++.1.dylib
+0x0000000100ad8000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/lib-dynload/_json.cpython-310-darwin.so
+0x0000000100aec000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/lib-dynload/fcntl.cpython-310-darwin.so
+0x0000000100afc000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/lib-dynload/_posixsubprocess.cpython-310-darwin.so
+0x0000000100b0c000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/lib-dynload/select.cpython-310-darwin.so
+0x0000000100b38000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/lib-dynload/math.cpython-310-darwin.so
+0x0000000100b20000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/lib-dynload/_opcode.cpython-310-darwin.so
+0x0000000100d50000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/lib-dynload/_heapq.cpython-310-darwin.so
+0x0000000100d80000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/lib-dynload/_socket.cpython-310-darwin.so
+0x0000000100da0000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/lib-dynload/array.cpython-310-darwin.so
+0x0000000100de8000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/lib-dynload/_ssl.cpython-310-darwin.so
+0x0000000100ea0000 	/Users/inseoklee/miniforge3/envs/nlp/lib/libssl.1.1.dylib
+0x0000000101154000 	/Users/inseoklee/miniforge3/envs/nlp/lib/libcrypto.1.1.dylib
+0x0000000100d60000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/lib-dynload/_struct.cpython-310-darwin.so
+0x0000000100db8000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/lib-dynload/binascii.cpython-310-darwin.so
+0x0000000100e38000 	/Users/inseoklee/miniforge3/envs/nlp/lib/libz.1.2.12.dylib
+0x0000000100dcc000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/lib-dynload/_contextvars.cpython-310-darwin.so
+0x0000000100e58000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/lib-dynload/_asyncio.cpython-310-darwin.so
+0x0000000100e18000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/lib-dynload/_queue.cpython-310-darwin.so
+0x0000000101028000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/lib-dynload/_ctypes.cpython-310-darwin.so
+0x000000010104c000 	/Users/inseoklee/miniforge3/envs/nlp/lib/libffi.8.dylib
+0x0000000101070000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/zmq/backend/cython/constants.cpython-310-darwin.so
+0x0000000101098000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/zmq/backend/cython/error.cpython-310-darwin.so
+0x0000000101428000 	/Users/inseoklee/miniforge3/envs/nlp/lib/libzmq.5.dylib
+0x0000000101384000 	/Users/inseoklee/miniforge3/envs/nlp/lib/libsodium.23.dylib
+0x00000001015a4000 	/Users/inseoklee/miniforge3/envs/nlp/lib/libc++.1.0.dylib
+0x00000001010e4000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/zmq/backend/cython/message.cpython-310-darwin.so
+0x00000001010b4000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/zmq/backend/cython/context.cpython-310-darwin.so
+0x00000001014cc000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/zmq/backend/cython/socket.cpython-310-darwin.so
+0x0000000100e28000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/lib-dynload/_bisect.cpython-310-darwin.so
+0x0000000100e74000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/lib-dynload/_random.cpython-310-darwin.so
+0x0000000100e84000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/lib-dynload/_sha512.cpython-310-darwin.so
+0x0000000101508000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/lib-dynload/_pickle.cpython-310-darwin.so
+0x0000000101530000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/zmq/backend/cython/utils.cpython-310-darwin.so
+0x0000000101550000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/zmq/backend/cython/_poll.cpython-310-darwin.so
+0x0000000101404000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/zmq/backend/cython/_version.cpython-310-darwin.so
+0x00000001017c0000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/zmq/backend/cython/_device.cpython-310-darwin.so
+0x00000001017e0000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/zmq/backend/cython/_proxy_steerable.cpython-310-darwin.so
+0x00000001013ec000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/lib-dynload/_hashlib.cpython-310-darwin.so
+0x0000000101574000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/lib-dynload/_blake2.cpython-310-darwin.so
+0x0000000101824000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/lib-dynload/_datetime.cpython-310-darwin.so
+0x0000000101588000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/lib-dynload/zlib.cpython-310-darwin.so
+0x0000000101988000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tornado/speedups.cpython-310-darwin.so
+0x00000001019c8000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/lib-dynload/_curses.cpython-310-darwin.so
+0x0000000101a30000 	/Users/inseoklee/miniforge3/envs/nlp/lib/libncursesw.6.dylib
+0x0000000101a70000 	/Users/inseoklee/miniforge3/envs/nlp/lib/libtinfow.6.dylib
+0x0000000101c00000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/lib-dynload/_decimal.cpython-310-darwin.so
+0x00000001010d4000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/lib-dynload/termios.cpython-310-darwin.so
+0x0000000101800000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/lib-dynload/_bz2.cpython-310-darwin.so
+0x00000001019f0000 	/Users/inseoklee/miniforge3/envs/nlp/lib/libbz2.1.0.8.dylib
+0x0000000101810000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/lib-dynload/_lzma.cpython-310-darwin.so
+0x0000000101d84000 	/Users/inseoklee/miniforge3/envs/nlp/lib/liblzma.5.dylib
+0x00000001019a0000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/lib-dynload/_uuid.cpython-310-darwin.so
+0x00000001019b0000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/lib-dynload/resource.cpython-310-darwin.so
+0x0000000101d50000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/lib-dynload/_sqlite3.cpython-310-darwin.so
+0x0000000102494000 	/Users/inseoklee/miniforge3/envs/nlp/lib/libsqlite3.0.dylib
+0x0000000102a48000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/lib-dynload/unicodedata.cpython-310-darwin.so
+0x0000000101a10000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/lib-dynload/_scproxy.cpython-310-darwin.so
+0x0000000191b38000 	/System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration
+0x000000019b0cd000 	/System/Library/PrivateFrameworks/AppleSystemInfo.framework/Versions/A/AppleSystemInfo
+0x0000000190f49000 	/System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+0x0000000194092000 	/System/Library/Frameworks/IOKit.framework/Versions/A/IOKit
+0x00000001936be000 	/System/Library/Frameworks/Security.framework/Versions/A/Security
+0x000000019bba0000 	/usr/lib/libbsm.0.dylib
+0x0000000195703000 	/usr/lib/libnetwork.dylib
+0x00000001972f1000 	/System/Library/Frameworks/Network.framework/Versions/A/Network
+0x0000000195ae3000 	/usr/lib/libMobileGestalt.dylib
+0x0000000194018000 	/System/Library/PrivateFrameworks/CoreServicesInternal.framework/Versions/A/CoreServicesInternal
+0x000000019c4d1000 	/usr/lib/libfakelink.dylib
+0x0000000193a53000 	/usr/lib/libicucore.A.dylib
+0x000000019c4d5000 	/System/Library/PrivateFrameworks/SoftLinking.framework/Versions/A/SoftLinking
+0x00000001a2fd5000 	/System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices
+0x00000001980e6000 	/usr/lib/libDiagnosticMessagesClient.dylib
+0x0000000195ae1000 	/usr/lib/libenergytrace.dylib
+0x000000019c419000 	/usr/lib/libz.1.dylib
+0x000000019c46a000 	/usr/lib/system/libkxld.dylib
+0x0000000195707000 	/System/Library/Frameworks/CFNetwork.framework/Versions/A/CFNetwork
+0x0000000198bb9000 	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/FSEvents
+0x0000000193d14000 	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CarbonCore.framework/Versions/A/CarbonCore
+0x0000000198126000 	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Metadata
+0x000000019c18d000 	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/OSServices.framework/Versions/A/OSServices
+0x000000019c697000 	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/SearchKit.framework/Versions/A/SearchKit
+0x000000019726d000 	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE
+0x000000019141d000 	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices
+0x000000019cd0e000 	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/DictionaryServices.framework/Versions/A/DictionaryServices
+0x0000000198bc6000 	/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/SharedFileList.framework/Versions/A/SharedFileList
+0x000000019c736000 	/usr/lib/libapple_nghttp2.dylib
+0x000000019c768000 	/usr/lib/libcompression.dylib
+0x0000000196efd000 	/usr/lib/libsqlite3.dylib
+0x0000000191e6e000 	/System/Library/Frameworks/Foundation.framework/Versions/C/Foundation
+0x000000021ca3e000 	/usr/lib/libCoreEntitlements.dylib
+0x000000020a289000 	/System/Library/PrivateFrameworks/MessageSecurity.framework/Versions/A/MessageSecurity
+0x000000019c169000 	/System/Library/PrivateFrameworks/AppleFSCompression.framework/Versions/A/AppleFSCompression
+0x000000019bb88000 	/usr/lib/libcoretls.dylib
+0x000000019cd7e000 	/usr/lib/libcoretls_cfhelpers.dylib
+0x000000019c763000 	/usr/lib/libpam.2.dylib
+0x000000019cde4000 	/usr/lib/libxar.1.dylib
+0x0000000198bf7000 	/System/Library/PrivateFrameworks/CoreAutoLayout.framework/Versions/A/CoreAutoLayout
+0x00000001981ca000 	/System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration
+0x000000019c610000 	/usr/lib/libarchive.2.dylib
+0x0000000198c41000 	/usr/lib/libxml2.2.dylib
+0x000000019b0d1000 	/usr/lib/liblangid.dylib
+0x00000001a0f4b000 	/System/Library/Frameworks/Combine.framework/Versions/A/Combine
+0x000000019f059000 	/usr/lib/swift/libswiftCore.dylib
+0x00000001b2872000 	/usr/lib/swift/libswiftCoreFoundation.dylib
+0x00000001b080c000 	/usr/lib/swift/libswiftDarwin.dylib
+0x00000001a44e6000 	/usr/lib/swift/libswiftDispatch.dylib
+0x00000001b2894000 	/usr/lib/swift/libswiftIOKit.dylib
+0x00000001a6937000 	/usr/lib/swift/libswiftObjectiveC.dylib
+0x00000001b2887000 	/usr/lib/swift/libswiftXPC.dylib
+0x000000021d8ee000 	/usr/lib/swift/libswift_Concurrency.dylib
+0x000000021da2f000 	/usr/lib/swift/libswift_StringProcessing.dylib
+0x00000001a693b000 	/usr/lib/swift/libswiftos.dylib
+0x000000019cd65000 	/usr/lib/liblzma.5.dylib
+0x000000019c17a000 	/usr/lib/libbz2.1.0.dylib
+0x000000019c50b000 	/usr/lib/libiconv.2.dylib
+0x000000019c463000 	/usr/lib/libcharset.1.dylib
+0x000000021d98c000 	/usr/lib/swift/libswift_RegexParser.dylib
+0x000000019d1af000 	/usr/lib/libheimdal-asn1.dylib
+0x000000019b886000 	/System/Library/PrivateFrameworks/IOMobileFramebuffer.framework/Versions/A/IOMobileFramebuffer
+0x000000019a0c7000 	/System/Library/Frameworks/IOSurface.framework/Versions/A/IOSurface
+0x000000019c4d6000 	/usr/lib/libpcap.A.dylib
+0x00000001972de000 	/usr/lib/libdns_services.dylib
+0x0000000196ee3000 	/System/Library/PrivateFrameworks/ProtocolBuffer.framework/Versions/A/ProtocolBuffer
+0x000000019bb78000 	/usr/lib/libCheckFix.dylib
+0x0000000195b5f000 	/System/Library/PrivateFrameworks/TCC.framework/Versions/A/TCC
+0x000000019b0d3000 	/System/Library/PrivateFrameworks/CoreNLP.framework/Versions/A/CoreNLP
+0x0000000191bf6000 	/usr/lib/libmecabra.dylib
+0x00000001980e8000 	/System/Library/PrivateFrameworks/MetadataUtilities.framework/Versions/A/MetadataUtilities
+0x00000001a3279000 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Accelerate
+0x000000019bbb1000 	/usr/lib/libmecab.dylib
+0x0000000191bc2000 	/usr/lib/libCRFSuite.dylib
+0x000000019bc0e000 	/usr/lib/libgermantok.dylib
+0x000000019c70f000 	/usr/lib/libThaiTokenizer.dylib
+0x00000001981d3000 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vImage.framework/Versions/A/vImage
+0x00000001a2fac000 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/vecLib
+0x000000019ce2a000 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libvMisc.dylib
+0x000000019b785000 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libvDSP.dylib
+0x00000001917c9000 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib
+0x000000019c83a000 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libLAPACK.dylib
+0x000000019bc11000 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libLinearAlgebra.dylib
+0x000000019c74e000 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libSparseBLAS.dylib
+0x000000019c835000 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libQuadrature.dylib
+0x000000019b1cd000 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBNNS.dylib
+0x0000000191ad1000 	/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libSparse.dylib
+0x0000000209611000 	/System/Library/PrivateFrameworks/MIL.framework/Versions/A/MIL
+0x00000001980b9000 	/System/Library/PrivateFrameworks/CoreAnalytics.framework/Versions/A/CoreAnalytics
+0x000000019b1c7000 	/System/Library/PrivateFrameworks/LinguisticData.framework/Versions/A/LinguisticData
+0x0000000191a84000 	/System/Library/PrivateFrameworks/Lexicon.framework/Versions/A/Lexicon
+0x000000019ce22000 	/usr/lib/libChineseTokenizer.dylib
+0x00000001928b7000 	/System/Library/PrivateFrameworks/LanguageModeling.framework/Versions/A/LanguageModeling
+0x000000019c711000 	/System/Library/PrivateFrameworks/AppleSauce.framework/Versions/A/AppleSauce
+0x000000019c5fe000 	/usr/lib/libcmph.dylib
+0x000000019b873000 	/System/Library/PrivateFrameworks/CoreEmoji.framework/Versions/A/CoreEmoji
+0x0000000198b99000 	/System/Library/Frameworks/OpenDirectory.framework/Versions/A/Frameworks/CFOpenDirectory.framework/Versions/A/CFOpenDirectory
+0x0000000198b89000 	/System/Library/Frameworks/OpenDirectory.framework/Versions/A/OpenDirectory
+0x000000019cd80000 	/System/Library/PrivateFrameworks/APFS.framework/Versions/A/APFS
+0x000000019baba000 	/System/Library/Frameworks/SecurityFoundation.framework/Versions/A/SecurityFoundation
+0x000000019cdf3000 	/usr/lib/libutil.dylib
+0x0000000208671000 	/System/Library/PrivateFrameworks/InstalledContentLibrary.framework/Versions/A/InstalledContentLibrary
+0x0000000194055000 	/System/Library/PrivateFrameworks/CoreServicesStore.framework/Versions/A/CoreServicesStore
+0x0000000198bf0000 	/usr/lib/libapp_launch_measurement.dylib
+0x00000001ff829000 	/System/Library/PrivateFrameworks/AppleMobileFileIntegrity.framework/Versions/A/AppleMobileFileIntegrity
+0x00000001b2851000 	/usr/lib/libmis.dylib
+0x00000001c030b000 	/System/Library/PrivateFrameworks/MobileSystemServices.framework/Versions/A/MobileSystemServices
+0x00000001da214000 	/System/Library/PrivateFrameworks/ConfigProfileHelper.framework/Versions/A/ConfigProfileHelper
+0x000000019cdf7000 	/usr/lib/libxslt.1.dylib
+0x000000019bb4c000 	/System/Library/PrivateFrameworks/BackgroundTaskManagement.framework/Versions/A/BackgroundTaskManagement
+0x0000000101a20000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/lib-dynload/_lsprof.cpython-310-darwin.so
+0x0000000101bf0000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/lib-dynload/grp.cpython-310-darwin.so
+0x0000000102438000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/lib-dynload/pyexpat.cpython-310-darwin.so
+0x0000000101d70000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/lib-dynload/_csv.cpython-310-darwin.so
+0x0000000104294000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_cython.cpython-310-darwin.so
+0x0000000107000000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/numpy/core/_multiarray_umath.cpython-310-darwin.so
+0x0000000110000000 	/Users/inseoklee/miniforge3/envs/nlp/lib/libopenblas_vortexp-r0.3.20.dylib
+0x0000000107394000 	/Users/inseoklee/miniforge3/envs/nlp/lib/libgfortran.5.dylib
+0x0000000105400000 	/Users/inseoklee/miniforge3/envs/nlp/lib/libomp.dylib
+0x0000000102470000 	/Users/inseoklee/miniforge3/envs/nlp/lib/libgcc_s.1.1.dylib
+0x0000000102da4000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/numpy/core/_multiarray_tests.cpython-310-darwin.so
+0x0000000104240000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/numpy/linalg/_umath_linalg.cpython-310-darwin.so
+0x0000000102dd4000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/numpy/fft/_pocketfft_internal.cpython-310-darwin.so
+0x00000001076bc000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/numpy/random/mtrand.cpython-310-darwin.so
+0x0000000104470000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/numpy/random/bit_generator.cpython-310-darwin.so
+0x00000001077e0000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/numpy/random/_common.cpython-310-darwin.so
+0x00000001078ac000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/numpy/random/_bounded_integers.cpython-310-darwin.so
+0x00000001044b8000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/numpy/random/_mt19937.cpython-310-darwin.so
+0x00000001057c8000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/numpy/random/_philox.cpython-310-darwin.so
+0x0000000107834000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/numpy/random/_pcg64.cpython-310-darwin.so
+0x0000000107860000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/numpy/random/_sfc64.cpython-310-darwin.so
+0x0000000107a54000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/numpy/random/_generator.cpython-310-darwin.so
+0x0000000102418000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/matplotlib/_c_internal_utils.cpython-310-darwin.so
+0x0000000104278000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/lib-dynload/_elementtree.cpython-310-darwin.so
+0x0000000107d44000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/PIL/_imaging.cpython-310-darwin.so
+0x00000001079ec000 	/Users/inseoklee/miniforge3/envs/nlp/lib/libjpeg.9.dylib
+0x0000000107e38000 	/Users/inseoklee/miniforge3/envs/nlp/lib/libtiff.5.dylib
+0x0000000107eb4000 	/Users/inseoklee/miniforge3/envs/nlp/lib/libwebp.7.dylib
+0x0000000112a1c000 	/Users/inseoklee/miniforge3/envs/nlp/lib/libzstd.1.5.2.dylib
+0x0000000107dbc000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/matplotlib/_path.cpython-310-darwin.so
+0x00000001079a4000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/matplotlib/ft2font.cpython-310-darwin.so
+0x0000000112ed4000 	/Users/inseoklee/miniforge3/envs/nlp/lib/libfreetype.6.dylib
+0x0000000107f28000 	/Users/inseoklee/miniforge3/envs/nlp/lib/libpng16.16.dylib
+0x0000000107fa8000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/kiwisolver/_cext.cpython-310-darwin.so
+0x0000000107f68000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/_lib/_ccallback_c.cpython-310-darwin.so
+0x0000000113144000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/spatial/ckdtree.cpython-310-darwin.so
+0x0000000116800000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/sparse/_sparsetools.cpython-310-darwin.so
+0x00000001132a0000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/sparse/_csparsetools.cpython-310-darwin.so
+0x0000000113340000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/sparse/csgraph/_shortest_path.cpython-310-darwin.so
+0x0000000113204000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/sparse/csgraph/_tools.cpython-310-darwin.so
+0x00000001133bc000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/sparse/csgraph/_traversal.cpython-310-darwin.so
+0x0000000113430000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/sparse/csgraph/_min_spanning_tree.cpython-310-darwin.so
+0x00000001134bc000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/sparse/csgraph/_flow.cpython-310-darwin.so
+0x000000011355c000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/sparse/csgraph/_matching.cpython-310-darwin.so
+0x0000000113700000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/sparse/csgraph/_reordering.cpython-310-darwin.so
+0x0000000116ce8000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/spatial/qhull.cpython-310-darwin.so
+0x0000000107a34000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/_lib/messagestream.cpython-310-darwin.so
+0x00000001135b4000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/spatial/_voronoi.cpython-310-darwin.so
+0x0000000116bdc000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/linalg/_fblas.cpython-310-darwin.so
+0x0000000116fc0000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/linalg/_flapack.cpython-310-darwin.so
+0x0000000113108000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/linalg/_flinalg.cpython-310-darwin.so
+0x0000000116c70000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/linalg/_solve_toeplitz.cpython-310-darwin.so
+0x0000000116f34000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/linalg/_matfuncs_sqrtm_triu.cpython-310-darwin.so
+0x00000001171dc000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/linalg/_decomp_update.cpython-310-darwin.so
+0x000000011718c000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/linalg/cython_blas.cpython-310-darwin.so
+0x0000000117308000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/linalg/cython_lapack.cpython-310-darwin.so
+0x00000001137d0000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/spatial/_distance_wrap.cpython-310-darwin.so
+0x000000011726c000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/spatial/_hausdorff.cpython-310-darwin.so
+0x0000000117574000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/special/_ufuncs.cpython-310-darwin.so
+0x0000000117230000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/special/_ufuncs_cxx.cpython-310-darwin.so
+0x0000000117474000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/special/specfun.cpython-310-darwin.so
+0x0000000102a2c000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/special/_comb.cpython-310-darwin.so
+0x000000011327c000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/special/_ellip_harm_2.cpython-310-darwin.so
+0x0000000117710000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/spatial/_distance_pybind.cpython-310-darwin.so
+0x000000011791c000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/spatial/transform/rotation.cpython-310-darwin.so
+0x0000000117508000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/ndimage/_nd_image.cpython-310-darwin.so
+0x00000001179c4000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/ndimage/_ni_label.cpython-310-darwin.so
+0x00000001044e4000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/optimize/minpack2.cpython-310-darwin.so
+0x0000000117b68000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/sparse/linalg/isolve/_iterative.cpython-310-darwin.so
+0x0000000117c10000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/sparse/linalg/dsolve/_superlu.cpython-310-darwin.so
+0x0000000117d00000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/sparse/linalg/eigen/arpack/_arpack.cpython-310-darwin.so
+0x0000000116cb4000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/optimize/_group_columns.cpython-310-darwin.so
+0x0000000117d90000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/optimize/_trlib/_trlib.cpython-310-darwin.so
+0x0000000107880000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/numpy/linalg/lapack_lite.cpython-310-darwin.so
+0x0000000117c70000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/optimize/_lbfgsb.cpython-310-darwin.so
+0x0000000113128000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/optimize/moduleTNC.cpython-310-darwin.so
+0x00000001178f4000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/optimize/_cobyla.cpython-310-darwin.so
+0x0000000117cdc000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/optimize/_slsqp.cpython-310-darwin.so
+0x0000000117f68000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/optimize/_minpack.cpython-310-darwin.so
+0x0000000117f8c000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/optimize/_lsq/givens_elimination.cpython-310-darwin.so
+0x00000001079d0000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/optimize/_zeros.cpython-310-darwin.so
+0x0000000107f90000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/optimize/__nnls.cpython-310-darwin.so
+0x0000000122264000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/optimize/_highs/_highs_wrapper.cpython-310-darwin.so
+0x0000000117538000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/optimize/_highs/_highs_constants.cpython-310-darwin.so
+0x000000012214c000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/linalg/_interpolative.cpython-310-darwin.so
+0x000000012245c000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/optimize/_bglu_dense.cpython-310-darwin.so
+0x0000000107fe8000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/optimize/_lsap_module.cpython-310-darwin.so
+0x0000000117554000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/integrate/_odepack.cpython-310-darwin.so
+0x0000000122218000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/integrate/_quadpack.cpython-310-darwin.so
+0x00000001225b4000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/integrate/vode.cpython-310-darwin.so
+0x000000012223c000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/integrate/_dop.cpython-310-darwin.so
+0x000000012266c000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/integrate/lsoda.cpython-310-darwin.so
+0x0000000122694000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/interpolate/_fitpack.cpython-310-darwin.so
+0x00000001229a4000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/interpolate/dfitpack.cpython-310-darwin.so
+0x0000000122a08000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/interpolate/_bspl.cpython-310-darwin.so
+0x0000000122ab4000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/interpolate/_ppoly.cpython-310-darwin.so
+0x0000000122b70000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/interpolate/interpnd.cpython-310-darwin.so
+0x0000000122bd0000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/interpolate/_rbfinterp_pythran.cpython-310-darwin.so
+0x0000000122cb4000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/stats/_stats.cpython-310-darwin.so
+0x0000000122f60000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/special/cython_special.cpython-310-darwin.so
+0x0000000122dbc000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/stats/_boost/beta_ufunc.cpython-310-darwin.so
+0x0000000122e2c000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/stats/_boost/binom_ufunc.cpython-310-darwin.so
+0x0000000122e90000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/stats/_boost/nbinom_ufunc.cpython-310-darwin.so
+0x0000000123274000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/stats/biasedurn.cpython-310-darwin.so
+0x00000001172e8000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/stats/statlib.cpython-310-darwin.so
+0x0000000123408000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/stats/mvn.cpython-310-darwin.so
+0x0000000140000000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/stats/_sobol.cpython-310-darwin.so
+0x00000001401c4000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/stats/_qmc_cy.cpython-310-darwin.so
+0x000000014033c000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/pandas/_libs/interval.cpython-310-darwin.so
+0x000000014060c000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/pandas/_libs/hashtable.cpython-310-darwin.so
+0x0000000140290000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/pandas/_libs/missing.cpython-310-darwin.so
+0x00000001402dc000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/pandas/_libs/tslibs/dtypes.cpython-310-darwin.so
+0x0000000140510000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/pandas/_libs/tslibs/conversion.cpython-310-darwin.so
+0x0000000117fc4000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/pandas/_libs/tslibs/base.cpython-310-darwin.so
+0x00000001408a4000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/pandas/_libs/tslibs/nattype.cpython-310-darwin.so
+0x00000001226d0000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/pandas/_libs/tslibs/np_datetime.cpython-310-darwin.so
+0x0000000140948000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/pandas/_libs/tslibs/timezones.cpython-310-darwin.so
+0x00000001409f4000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/pandas/_libs/tslibs/tzconversion.cpython-310-darwin.so
+0x0000000122d8c000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/pandas/_libs/tslibs/ccalendar.cpython-310-darwin.so
+0x0000000140b10000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/pandas/_libs/tslibs/parsing.cpython-310-darwin.so
+0x0000000140cbc000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/pandas/_libs/tslibs/offsets.cpython-310-darwin.so
+0x0000000140c18000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/pandas/_libs/tslibs/timedeltas.cpython-310-darwin.so
+0x0000000140e44000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/pandas/_libs/tslibs/fields.cpython-310-darwin.so
+0x0000000140f14000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/pandas/_libs/tslibs/strptime.cpython-310-darwin.so
+0x000000014102c000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/pandas/_libs/tslibs/timestamps.cpython-310-darwin.so
+0x0000000122980000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/pandas/_libs/properties.cpython-310-darwin.so
+0x000000014114c000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/pandas/_libs/tslibs/period.cpython-310-darwin.so
+0x00000001411cc000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/pandas/_libs/tslibs/vectorized.cpython-310-darwin.so
+0x0000000122b50000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/pandas/_libs/ops_dispatch.cpython-310-darwin.so
+0x00000001413c4000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/pandas/_libs/algos.cpython-310-darwin.so
+0x00000001412d4000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/pandas/_libs/lib.cpython-310-darwin.so
+0x0000000141254000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/pandas/_libs/tslib.cpython-310-darwin.so
+0x0000000141578000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/pandas/_libs/hashing.cpython-310-darwin.so
+0x0000000141738000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/pandas/_libs/ops.cpython-310-darwin.so
+0x0000000140ee0000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/numexpr/interpreter.cpython-310-darwin.so
+0x0000000140314000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/bottleneck/move.cpython-310-darwin.so
+0x0000000117bf0000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/bottleneck/nonreduce.cpython-310-darwin.so
+0x0000000122a98000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/bottleneck/nonreduce_axis.cpython-310-darwin.so
+0x0000000140ad4000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/bottleneck/reduce.cpython-310-darwin.so
+0x0000000141394000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/pandas/_libs/arrays.cpython-310-darwin.so
+0x0000000141b50000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/pandas/_libs/index.cpython-310-darwin.so
+0x0000000141e84000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/pandas/_libs/join.cpython-310-darwin.so
+0x0000000141cac000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/pandas/_libs/sparse.cpython-310-darwin.so
+0x0000000122f34000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/pandas/_libs/reduction.cpython-310-darwin.so
+0x00000001405e8000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/pandas/_libs/indexing.cpython-310-darwin.so
+0x0000000142190000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/pandas/_libs/internals.cpython-310-darwin.so
+0x0000000142400000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/pandas/_libs/writers.cpython-310-darwin.so
+0x0000000102400000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/lib-dynload/mmap.cpython-310-darwin.so
+0x0000000142634000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/pandas/_libs/window/aggregations.cpython-310-darwin.so
+0x00000001425c4000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/pandas/_libs/window/indexers.cpython-310-darwin.so
+0x0000000142730000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/pandas/_libs/reshape.cpython-310-darwin.so
+0x00000001429bc000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/pandas/_libs/groupby.cpython-310-darwin.so
+0x000000014297c000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/pandas/_libs/testing.cpython-310-darwin.so
+0x00000001077cc000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/lib-dynload/cmath.cpython-310-darwin.so
+0x0000000142c54000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/pandas/_libs/parsers.cpython-310-darwin.so
+0x0000000142bc0000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/pandas/_libs/json.cpython-310-darwin.so
+0x0000000143500000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/matplotlib/_image.cpython-310-darwin.so
+0x0000000143874000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/matplotlib/backends/_backend_agg.cpython-310-darwin.so
+0x00000001439b8000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/cluster/_vq.cpython-310-darwin.so
+0x0000000143ac8000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/cluster/_hierarchy.cpython-310-darwin.so
+0x0000000143b80000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/scipy/cluster/_optimal_leaf_ordering.cpython-310-darwin.so
+0x0000000143e04000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/_jpype.cpython-310-darwin.so
+0x0000000143e98000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tensorflow/core/platform/_cpu_feature_guard.so
+0x0000000280000000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tensorflow/python/_pywrap_tensorflow_internal.so
+0x0000000146454000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tensorflow/libtensorflow_framework.2.dylib
+0x0000000145128000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tensorflow/python/_pywrap_tfe.so
+0x0000000144e90000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tensorflow/python/platform/_pywrap_tf2.so
+0x000000014595c000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tensorflow/python/client/_pywrap_tf_session.so
+0x00000001235e0000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/wrapt/_wrappers.cpython-310-darwin.so
+0x0000000145554000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tensorflow/python/util/_pywrap_utils.so
+0x00000001425fc000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tensorflow/python/util/_pywrap_nest.so
+0x000000014561c000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tensorflow/python/_pywrap_py_exception_registry.so
+0x0000000145078000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tensorflow/python/framework/_dtypes.so
+0x0000000142c2c000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tensorflow/python/lib/core/_pywrap_bfloat16.so
+0x0000000145ed8000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tensorflow/python/profiler/internal/_pywrap_traceme.so
+0x0000000145d68000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tensorflow/python/framework/_pywrap_python_api_dispatcher.so
+0x0000000146138000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tensorflow/python/util/_tf_stack.so
+0x000000014100c000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tensorflow/python/framework/fast_tensor_util.so
+0x0000000148228000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tensorflow/python/framework/_op_def_registry.so
+0x0000000148504000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tensorflow/python/flags_pybind.so
+0x0000000148824000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tensorflow/python/framework/_op_def_library_pybind.so
+0x0000000143fd0000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tensorflow/python/util/_pywrap_determinism.so
+0x0000000145930000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tensorflow/python/util/_pywrap_tensor_float_32_execution.so
+0x00000001489d4000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tensorflow/python/framework/_proto_comparators.so
+0x0000000148ff4000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tensorflow/python/data/experimental/service/_pywrap_server_lib.so
+0x0000000149670000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tensorflow/python/data/experimental/service/_pywrap_utils.so
+0x0000000149b74000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tensorflow/python/lib/io/_pywrap_file_io.so
+0x000000014a800000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tensorflow/python/lib/io/_pywrap_record_io.so
+0x000000014ab20000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tensorflow/python/saved_model/pywrap_saved_model.so
+0x000000014acc0000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tensorflow/python/util/_pywrap_checkpoint_reader.so
+0x000000014aff0000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tensorflow/python/_pywrap_parallel_device.so
+0x0000000143aa4000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tensorflow/python/lib/core/_pywrap_py_func.so
+0x000000014b308000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tensorflow/python/client/_pywrap_events_writer.so
+0x000000014b90c000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tensorflow/python/profiler/internal/_pywrap_profiler.so
+0x0000000107898000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/lib-dynload/_multiprocessing.cpython-310-darwin.so
+0x000000014ca10000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tensorflow/python/client/_pywrap_device_lib.so
+0x000000014d2c4000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tensorflow/compiler/tf2tensorrt/_pywrap_py_utils.so
+0x000000014d48c000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tensorflow/python/grappler/_pywrap_tf_optimizer.so
+0x000000014d5fc000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tensorflow/python/grappler/_pywrap_tf_cluster.so
+0x000000014d780000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/brotli/_brotli.abi3.so
+0x000000014c9a8000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/_cffi_backend.cpython-310-darwin.so
+0x00000001135ec000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/lib-dynload/_multibytecodec.cpython-310-darwin.so
+0x000000014216c000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/h5py/_errors.cpython-310-darwin.so
+0x000000014ddec000 	/Users/inseoklee/miniforge3/envs/nlp/lib/libhdf5.200.dylib
+0x000000014da44000 	/Users/inseoklee/miniforge3/envs/nlp/lib/libcurl.4.dylib
+0x00000001484d0000 	/Users/inseoklee/miniforge3/envs/nlp/lib/libnghttp2.14.dylib
+0x000000014d200000 	/Users/inseoklee/miniforge3/envs/nlp/lib/libssh2.1.0.1.dylib
+0x000000014dadc000 	/Users/inseoklee/miniforge3/envs/nlp/lib/libgssapi_krb5.2.2.dylib
+0x000000014dbf8000 	/Users/inseoklee/miniforge3/envs/nlp/lib/libkrb5.3.3.dylib
+0x0000000146108000 	/Users/inseoklee/miniforge3/envs/nlp/lib/libk5crypto.3.1.dylib
+0x0000000116cd4000 	/Users/inseoklee/miniforge3/envs/nlp/lib/libcom_err.3.0.dylib
+0x00000001404f8000 	/Users/inseoklee/miniforge3/envs/nlp/lib/libkrb5support.1.1.dylib
+0x000000019f8d2000 	/usr/lib/libresolv.9.dylib
+0x0000000149640000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/h5py/h5.cpython-310-darwin.so
+0x000000014dcc0000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/h5py/defs.cpython-310-darwin.so
+0x000000014642c000 	/Users/inseoklee/miniforge3/envs/nlp/lib/libhdf5_hl.200.dylib
+0x000000014dbb0000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/h5py/_objects.cpython-310-darwin.so
+0x000000014e198000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/h5py/_conv.cpython-310-darwin.so
+0x0000000143dd0000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/h5py/h5r.cpython-310-darwin.so
+0x000000014e2e8000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/h5py/h5t.cpython-310-darwin.so
+0x000000014e3f8000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/h5py/h5p.cpython-310-darwin.so
+0x000000014d288000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/h5py/h5s.cpython-310-darwin.so
+0x0000000148200000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/h5py/utils.cpython-310-darwin.so
+0x00000001487f8000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/h5py/h5ac.cpython-310-darwin.so
+0x000000014afd0000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/h5py/h5z.cpython-310-darwin.so
+0x000000014e56c000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/h5py/h5a.cpython-310-darwin.so
+0x000000014b2d8000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/h5py/_proxy.cpython-310-darwin.so
+0x000000014e698000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/h5py/h5d.cpython-310-darwin.so
+0x000000014e538000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/h5py/h5ds.cpython-310-darwin.so
+0x000000014e750000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/h5py/h5f.cpython-310-darwin.so
+0x000000014e848000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/h5py/h5g.cpython-310-darwin.so
+0x000000014c9ec000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/h5py/h5i.cpython-310-darwin.so
+0x000000014ea08000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/h5py/h5fd.cpython-310-darwin.so
+0x00000001409d4000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/h5py/h5pl.cpython-310-darwin.so
+0x000000014eac8000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/h5py/h5o.cpython-310-darwin.so
+0x000000014e660000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/h5py/h5l.cpython-310-darwin.so
+0x000000014ebb8000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/h5py/_selector.cpython-310-darwin.so
+0x000000014f26c000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tensorflow/python/util/_pywrap_tfprof.so
+0x000000014f740000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tensorflow/python/_pywrap_quantize_training.so
+0x000000014f1c0000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tensorflow/python/_pywrap_sanitizers.so
+0x000000014fb10000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tensorflow/python/framework/_test_metrics_util.so
+0x000000014f5d8000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tensorflow/python/platform/_pywrap_stacktrace_handler.so
+0x000000014f9e8000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tensorflow/python/util/_pywrap_util_port.so
+0x0000000168000000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tensorflow/python/client/_pywrap_debug_events_writer.so
+0x0000000168170000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tensorflow/python/_pywrap_mlir.so
+0x000000014fe78000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tensorflow/python/framework/_pywrap_python_op_gen.so
+0x0000000168410000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tensorflow/python/_pywrap_toco_api.so
+0x0000000168868000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tensorflow/lite/python/metrics/_pywrap_tensorflow_lite_metrics_wrapper.so
+0x0000000168700000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tensorflow/lite/experimental/microfrontend/python/ops/_audio_microfrontend_op.so
+0x0000000168ef4000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tensorflow/lite/python/interpreter_wrapper/_pywrap_tensorflow_interpreter_wrapper.so
+0x0000000168c0c000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tensorflow/lite/python/analyzer_wrapper/_pywrap_analyzer_wrapper.so
+0x0000000168830000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tensorflow/python/_pywrap_dtensor_device.so
+0x0000000169a84000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tensorflow-plugins/libmetal_plugin.dylib
+0x000000019a0e7000 	/System/Library/Frameworks/Metal.framework/Versions/A/Metal
+0x0000000204f71000 	/System/Library/PrivateFrameworks/GPUCompiler.framework/Versions/31001/Libraries/libllvm-flatbuffers.dylib
+0x000000019a0dd000 	/System/Library/PrivateFrameworks/IOAccelerator.framework/Versions/A/IOAccelerator
+0x00000001dee87000 	/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libCoreFSCache.dylib
+0x0000000204f6d000 	/System/Library/PrivateFrameworks/GPUCompiler.framework/Versions/31001/Libraries/libGPUCompilerUtils.dylib
+0x000000019c761000 	/System/Library/Frameworks/MetalPerformanceShaders.framework/Versions/A/MetalPerformanceShaders
+0x000000019b04d000 	/System/Library/Frameworks/MetalPerformanceShaders.framework/Versions/A/Frameworks/MPSCore.framework/Versions/A/MPSCore
+0x000000019c0df000 	/System/Library/Frameworks/MetalPerformanceShaders.framework/Versions/A/Frameworks/MPSImage.framework/Versions/A/MPSImage
+0x000000019bc26000 	/System/Library/Frameworks/MetalPerformanceShaders.framework/Versions/A/Frameworks/MPSNeuralNetwork.framework/Versions/A/MPSNeuralNetwork
+0x000000019c011000 	/System/Library/Frameworks/MetalPerformanceShaders.framework/Versions/A/Frameworks/MPSMatrix.framework/Versions/A/MPSMatrix
+0x000000019be23000 	/System/Library/Frameworks/MetalPerformanceShaders.framework/Versions/A/Frameworks/MPSRayIntersector.framework/Versions/A/MPSRayIntersector
+0x000000019c03d000 	/System/Library/Frameworks/MetalPerformanceShaders.framework/Versions/A/Frameworks/MPSNDArray.framework/Versions/A/MPSNDArray
+0x00000001fb1d0000 	/System/Library/Frameworks/MetalPerformanceShaders.framework/Versions/A/Frameworks/MPSFunctions.framework/Versions/A/MPSFunctions
+0x000000019168f000 	/System/Library/PrivateFrameworks/MetalTools.framework/Versions/A/MetalTools
+0x000000019b0cb000 	/System/Library/PrivateFrameworks/AggregateDictionary.framework/Versions/A/AggregateDictionary
+0x00000001fb1e4000 	/System/Library/Frameworks/MetalPerformanceShadersGraph.framework/Versions/A/MetalPerformanceShadersGraph
+0x00000001a84f4000 	/System/Library/PrivateFrameworks/AppleNeuralEngine.framework/Versions/A/AppleNeuralEngine
+0x00000001da7bd000 	/System/Library/PrivateFrameworks/ANECompiler.framework/Versions/A/ANECompiler
+0x00000001b66ad000 	/usr/lib/libncurses.5.4.dylib
+0x00000001a7654000 	/System/Library/PrivateFrameworks/ANEServices.framework/Versions/A/ANEServices
+0x000000019417e000 	/usr/lib/libsandbox.1.dylib
+0x0000000198d2a000 	/System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo
+0x000000019a9c2000 	/System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO
+0x0000000195f82000 	/System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics
+0x00000001965ca000 	/System/Library/Frameworks/ColorSync.framework/Versions/A/ColorSync
+0x00000001dee94000 	/System/Library/Frameworks/OpenGL.framework/Versions/A/OpenGL
+0x0000000195b7d000 	/System/Library/PrivateFrameworks/SkyLight.framework/Versions/A/SkyLight
+0x000000019a4c1000 	/System/Library/PrivateFrameworks/FontServices.framework/libFontParser.dylib
+0x000000019720f000 	/System/Library/PrivateFrameworks/RunningBoardServices.framework/Versions/A/RunningBoardServices
+0x00000001a8dd7000 	/System/Library/PrivateFrameworks/IOSurfaceAccelerator.framework/Versions/A/IOSurfaceAccelerator
+0x000000019dbb8000 	/System/Library/PrivateFrameworks/WatchdogClient.framework/Versions/A/WatchdogClient
+0x0000000192a2f000 	/System/Library/Frameworks/CoreDisplay.framework/Versions/A/CoreDisplay
+0x000000019a2d9000 	/System/Library/Frameworks/CoreMedia.framework/Versions/A/CoreMedia
+0x000000019dbbc000 	/System/Library/PrivateFrameworks/MultitouchSupport.framework/Versions/A/MultitouchSupport
+0x000000019858a000 	/System/Library/Frameworks/QuartzCore.framework/Versions/A/QuartzCore
+0x000000019dbf7000 	/System/Library/Frameworks/VideoToolbox.framework/Versions/A/VideoToolbox
+0x0000000197155000 	/System/Library/PrivateFrameworks/BaseBoard.framework/Versions/A/BaseBoard
+0x000000019da82000 	/System/Library/PrivateFrameworks/AppleJPEG.framework/Versions/A/AppleJPEG
+0x000000019d194000 	/usr/lib/libexpat.1.dylib
+0x000000019e098000 	/System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libPng.dylib
+0x000000019e0c3000 	/System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libTIFF.dylib
+0x000000019e1ab000 	/System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libGIF.dylib
+0x000000019dac7000 	/System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libJP2.dylib
+0x000000019cea6000 	/usr/lib/libate.dylib
+0x000000019e14f000 	/System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libJPEG.dylib
+0x000000019e146000 	/System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libRadiance.dylib
+0x000000019e141000 	/System/Library/PrivateFrameworks/GPUWrangler.framework/Versions/A/GPUWrangler
+0x000000019e121000 	/System/Library/PrivateFrameworks/IOPresentment.framework/Versions/A/IOPresentment
+0x000000019e149000 	/System/Library/PrivateFrameworks/DSExternalDisplay.framework/Versions/A/DSExternalDisplay
+0x000000019e1b1000 	/System/Library/PrivateFrameworks/CMCaptureCore.framework/Versions/A/CMCaptureCore
+0x000000019d78d000 	/usr/lib/libspindump.dylib
+0x0000000192fe7000 	/System/Library/Frameworks/CoreAudio.framework/Versions/A/CoreAudio
+0x00000001fab5d000 	/System/Library/Frameworks/ExtensionFoundation.framework/Versions/A/ExtensionFoundation
+0x00000001a4ce8000 	/System/Library/PrivateFrameworks/CoreTime.framework/Versions/A/CoreTime
+0x000000019d778000 	/System/Library/PrivateFrameworks/AppServerSupport.framework/Versions/A/AppServerSupport
+0x000000019ff5d000 	/System/Library/PrivateFrameworks/perfdata.framework/Versions/A/perfdata
+0x0000000192b4f000 	/System/Library/PrivateFrameworks/AudioToolboxCore.framework/Versions/A/AudioToolboxCore
+0x000000019a2af000 	/System/Library/PrivateFrameworks/caulk.framework/Versions/A/caulk
+0x000000019f826000 	/usr/lib/libAudioStatistics.dylib
+0x00000001b1cae000 	/System/Library/PrivateFrameworks/SystemPolicy.framework/Versions/A/SystemPolicy
+0x000000019fabc000 	/usr/lib/libSMC.dylib
+0x00000001a859c000 	/System/Library/Frameworks/CoreMIDI.framework/Versions/A/CoreMIDI
+0x000000019e065000 	/usr/lib/libAudioToolboxUtility.dylib
+0x00000001adb14000 	/System/Library/PrivateFrameworks/OSAServicesClient.framework/Versions/A/OSAServicesClient
+0x000000019ff6a000 	/usr/lib/libperfcheck.dylib
+0x0000000195269000 	/System/Library/Frameworks/UniformTypeIdentifiers.framework/Versions/A/UniformTypeIdentifiers
+0x0000000198dc8000 	/System/Library/PrivateFrameworks/UserManagement.framework/Versions/A/UserManagement
+0x000000019d07f000 	/System/Library/PrivateFrameworks/PlugInKit.framework/Versions/A/PlugInKit
+0x000000019baac000 	/System/Library/PrivateFrameworks/AssertionServices.framework/Versions/A/AssertionServices
+0x000000019ba83000 	/System/Library/PrivateFrameworks/MobileKeyBag.framework/Versions/A/MobileKeyBag
+0x000000019cf38000 	/usr/lib/libIOReport.dylib
+0x000000019acfe000 	/System/Library/Frameworks/CoreImage.framework/Versions/A/CoreImage
+0x00000001a77e3000 	/System/Library/PrivateFrameworks/ASEProcessing.framework/Versions/A/ASEProcessing
+0x0000000192e0a000 	/System/Library/Frameworks/CoreText.framework/Versions/A/CoreText
+0x000000019d316000 	/System/Library/PrivateFrameworks/GraphVisualizer.framework/Versions/A/GraphVisualizer
+0x0000000204e7e000 	/System/Library/PrivateFrameworks/FontServices.framework/Versions/A/FontServices
+0x000000019d736000 	/System/Library/PrivateFrameworks/OTSVG.framework/Versions/A/OTSVG
+0x00000001988e3000 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Resources/libFontRegistry.dylib
+0x000000019d782000 	/System/Library/PrivateFrameworks/FontServices.framework/libhvf.dylib
+0x0000000204e7f000 	/System/Library/PrivateFrameworks/FontServices.framework/libXTFontStaticRegistryData.dylib
+0x00000001deee9000 	/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLU.dylib
+0x00000001deea8000 	/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGFXShared.dylib
+0x00000001df08f000 	/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib
+0x00000001deeb1000 	/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLImage.dylib
+0x00000001deea5000 	/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libCVMSPluginSupport.dylib
+0x000000021cbb8000 	/usr/lib/libRosetta.dylib
+0x00000001dee8e000 	/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libCoreVMClient.dylib
+0x00000002163c2000 	/System/Library/PrivateFrameworks/VideoToolboxParavirtualizationSupport.framework/Versions/A/VideoToolboxParavirtualizationSupport
+0x000000019d148000 	/System/Library/PrivateFrameworks/AppleVA.framework/Versions/A/AppleVA
+0x000000019d0bc000 	/usr/lib/libMatch.1.dylib
+0x00000001df304000 	/System/Library/Extensions/AGXMetal13_3.bundle/Contents/MacOS/AGXMetal13_3
+0x00000001b2865000 	/System/Library/PrivateFrameworks/GPURawCounter.framework/Versions/A/GPURawCounter
+0x00000001acc28000 	/System/Library/PrivateFrameworks/IOGPU.framework/Versions/A/IOGPU
+0x000000016c9bc000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/tensorflow/python/util/fast_module_type.so
+0x0000000140ca4000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/sklearn/__check_build/_check_build.cpython-310-darwin.so
+0x0000000168800000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/sklearn/utils/murmurhash.cpython-310-darwin.so
+0x0000000140e28000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/sklearn/utils/_openmp_helpers.cpython-310-darwin.so
+0x000000016c940000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/sklearn/utils/_logistic_sigmoid.cpython-310-darwin.so
+0x000000016d800000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/sklearn/utils/sparsefuncs_fast.cpython-310-darwin.so
+0x000000016cf48000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/sklearn/preprocessing/_csr_polynomial_expansion.cpython-310-darwin.so
+0x000000016d924000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/sklearn/metrics/_dist_metrics.cpython-310-darwin.so
+0x00000001429a4000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/sklearn/utils/_typedefs.cpython-310-darwin.so
+0x000000016da8c000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/sklearn/utils/_readonly_array_wrapper.cpython-310-darwin.so
+0x0000000168bd0000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/sklearn/metrics/cluster/_expected_mutual_info_fast.cpython-310-darwin.so
+0x000000016dbd8000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/sklearn/metrics/_pairwise_fast.cpython-310-darwin.so
+0x0000000168ec8000 	/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/sklearn/utils/_random.cpython-310-darwin.so
+0x000000014510c000 	/Library/Java/JavaVirtualMachines/zulu-15.jdk/Contents/Home/lib/libjli.dylib
+0x00000001a86c3000 	/System/Library/Frameworks/Cocoa.framework/Versions/A/Cocoa
+0x00000001941cf000 	/System/Library/Frameworks/AppKit.framework/Versions/C/AppKit
+0x0000000196b31000 	/System/Library/Frameworks/CoreData.framework/Versions/A/CoreData
+0x00000001950c7000 	/System/Library/PrivateFrameworks/UIFoundation.framework/Versions/A/UIFoundation
+0x0000000200f79000 	/System/Library/PrivateFrameworks/CollectionViewCore.framework/Versions/A/CollectionViewCore
+0x00000001a2bb6000 	/System/Library/PrivateFrameworks/RemoteViewServices.framework/Versions/A/RemoteViewServices
+0x000000019a983000 	/System/Library/PrivateFrameworks/XCTTargetBootstrap.framework/Versions/A/XCTTargetBootstrap
+0x000000019e2d1000 	/System/Library/PrivateFrameworks/InternationalSupport.framework/Versions/A/InternationalSupport
+0x000000019e358000 	/System/Library/PrivateFrameworks/UserActivity.framework/Versions/A/UserActivity
+0x00000002174e0000 	/System/Library/PrivateFrameworks/WindowManagement.framework/Versions/A/WindowManagement
+0x000000019a989000 	/System/Library/PrivateFrameworks/CoreSVG.framework/Versions/A/CoreSVG
+0x000000019d1d4000 	/System/Library/PrivateFrameworks/IconServices.framework/Versions/A/IconServices
+0x00000001a651e000 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices
+0x000000019a96b000 	/System/Library/PrivateFrameworks/DFRFoundation.framework/Versions/A/DFRFoundation
+0x000000019f68a000 	/System/Library/Frameworks/AudioToolbox.framework/Versions/A/AudioToolbox
+0x000000019e2dc000 	/System/Library/PrivateFrameworks/DataDetectorsCore.framework/Versions/A/DataDetectorsCore
+0x00000001b5704000 	/System/Library/PrivateFrameworks/TextInput.framework/Versions/A/TextInput
+0x000000019a637000 	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/HIToolbox.framework/Versions/A/HIToolbox
+0x00000001a2bf6000 	/System/Library/Frameworks/Carbon.framework/Versions/A/Frameworks/SpeechRecognition.framework/Versions/A/SpeechRecognition
+0x0000000198934000 	/System/Library/PrivateFrameworks/CoreUI.framework/Versions/A/CoreUI
+0x0000000198b7d000 	/System/Library/PrivateFrameworks/PerformanceAnalysis.framework/Versions/A/PerformanceAnalysis
+0x000000019e22d000 	/System/Library/PrivateFrameworks/TextureIO.framework/Versions/A/TextureIO
+0x000000019f862000 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/ATS
+0x00000001966ba000 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/HIServices.framework/Versions/A/HIServices
+0x000000019e1bd000 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/PrintCore.framework/Versions/A/PrintCore
+0x000000019fc15000 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/QD.framework/Versions/A/QD
+0x000000019fc09000 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ColorSyncLegacy.framework/Versions/A/ColorSyncLegacy
+0x000000019f83a000 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/SpeechSynthesis.framework/Versions/A/SpeechSynthesis
+0x000000019e17b000 	/System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATSUI.framework/Versions/A/ATSUI
+0x000000019fb9c000 	/usr/lib/libcups.2.dylib
+0x000000019ff78000 	/System/Library/Frameworks/Kerberos.framework/Versions/A/Kerberos
+0x000000019ff89000 	/System/Library/Frameworks/GSS.framework/Versions/A/GSS
+0x000000019d792000 	/System/Library/PrivateFrameworks/Heimdal.framework/Versions/A/Heimdal
+0x00000001a68bb000 	/System/Library/Frameworks/Kerberos.framework/Versions/A/Libraries/libHeimdalProxy.dylib
+0x000000019ffd9000 	/System/Library/PrivateFrameworks/CommonAuth.framework/Versions/A/CommonAuth
+0x00000001e00e0000 	/System/Library/Frameworks/AVFAudio.framework/Versions/A/AVFAudio
+0x00000001adb63000 	/System/Library/PrivateFrameworks/AXCoreUtilities.framework/Versions/A/AXCoreUtilities
+0x000000019f7b2000 	/System/Library/PrivateFrameworks/AudioSession.framework/Versions/A/AudioSession
+0x00000001a0d0c000 	/System/Library/Frameworks/IOBluetooth.framework/Versions/A/IOBluetooth
+0x000000019d247000 	/System/Library/PrivateFrameworks/MediaExperience.framework/Versions/A/MediaExperience
+0x000000019f650000 	/System/Library/PrivateFrameworks/AudioSession.framework/libSessionUtility.dylib
+0x000000019fc21000 	/System/Library/PrivateFrameworks/AudioResourceArbitration.framework/Versions/A/AudioResourceArbitration
+0x00000001a3bc6000 	/System/Library/PrivateFrameworks/PowerLog.framework/Versions/A/PowerLog
+0x00000001a3b0b000 	/System/Library/Frameworks/CoreBluetooth.framework/Versions/A/CoreBluetooth
+0x00000001a68bc000 	/System/Library/Frameworks/AudioUnit.framework/Versions/A/AudioUnit
+0x000000019b910000 	/System/Library/PrivateFrameworks/CoreUtils.framework/Versions/A/CoreUtils
+0x0000000203964000 	/System/Library/PrivateFrameworks/CoreUtilsExtras.framework/Versions/A/CoreUtilsExtras
+0x0000000208513000 	/System/Library/PrivateFrameworks/IO80211.framework/Versions/A/IO80211
+0x000000019d1b9000 	/System/Library/PrivateFrameworks/IconFoundation.framework/Versions/A/IconFoundation
+0x00000001a2be2000 	/System/Library/PrivateFrameworks/SpeechRecognitionCore.framework/Versions/A/SpeechRecognitionCore
+0x000000017a124000 	/Library/Java/JavaVirtualMachines/zulu-15.jdk/Contents/Home/lib/server/libjvm.dylib
+0x0000000117fe4000 	/Library/Java/JavaVirtualMachines/zulu-15.jdk/Contents/Home/lib/libjimage.dylib
+
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF8 -ea -Xmx1024m 
+java_command: <unknown>
+java_class_path (initial): /Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/konlpy/java:/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/konlpy/java/bin:/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/konlpy/java/scala-library-2.12.3.jar:/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/konlpy/java/twitter-text-1.14.7.jar:/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/konlpy/java/komoran-3.0.jar:/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/konlpy/java/jhannanum-0.8.4.jar:/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/konlpy/java/open-korean-text-2.1.0.jar:/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/konlpy/java/aho-corasick.jar:/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/konlpy/java/kkma-2.0.jar:/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/konlpy/java/shineware-common-1.0.jar:/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/konlpy/java/snakeyaml-1.12.jar:/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/konlpy/java/shineware-ds-1.0.jar:/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/konlpy/java/jhannanum-0.8.4.jar:/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/konlpy/java/kkma-2.0.jar:/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/konlpy/java/aho-corasick.jar:/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/konlpy/java/shineware-common-1.0.jar:/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/konlpy/java/shineware-ds-1.0.jar:/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/konlpy/java/komoran-3.0.jar:/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/konlpy/java/snakeyaml-1.12.jar:/Users/inseoklee/miniforge3/envs/nlp/lib/python3.10/site-packages/konlpy/java/scala-library-2.12.3.jar:/Users/inseoklee/miniforge3/envs/nlp/lib/pyt
+Launcher Type: generic
+
+[Global flags]
+     uint ConcGCThreads                            = 2                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 8                                         {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 268435456                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 1073741824                                {product} {command line}
+   size_t MinHeapSize                              = 6815736                                   {product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     bool UseCompressedClassPointers               = true                                 {lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                                 {lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseNUMA                                  = false                                     {product} {ergonomic}
+     bool UseNUMAInterleaving                      = false                                     {product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-15.jdk/Contents/Home
+PATH=/Users/inseoklee/miniforge3/envs/nlp/bin:/Users/inseoklee/miniforge3/condabin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Library/Java/JavaVirtualMachines/zulu-15.jdk/Contents/Home/bin:.
+SHELL=/bin/zsh
+LANG=en_US.UTF-8
+LC_ALL=en_US.UTF-8
+LC_CTYPE=ko_KR.UTF-8
+
+Signal Handlers:
+SIGSEGV: [libjvm.dylib+0x921d4c], sa_mask[0]=11111111011111110111111111111111, sa_flags=SA_ONSTACK|SA_RESTART|SA_SIGINFO
+SIGBUS: [libjvm.dylib+0x921d4c], sa_mask[0]=11111111011111110111111111111111, sa_flags=SA_RESTART|SA_SIGINFO
+SIGFPE: [libjvm.dylib+0x921d4c], sa_mask[0]=11111111011111110111111111111111, sa_flags=SA_RESTART|SA_SIGINFO
+SIGPIPE: [libjvm.dylib+0x713244], sa_mask[0]=11111111011111110111111111111111, sa_flags=SA_RESTART|SA_SIGINFO
+SIGXFSZ: [libjvm.dylib+0x713244], sa_mask[0]=11111111011111110111111111111111, sa_flags=SA_RESTART|SA_SIGINFO
+SIGILL: [libjvm.dylib+0x921d4c], sa_mask[0]=11111111011111110111111111111111, sa_flags=SA_RESTART|SA_SIGINFO
+SIGUSR2: [libjvm.dylib+0x713c78], sa_mask[0]=00100000000000000000000000000000, sa_flags=SA_RESTART|SA_SIGINFO
+SIGHUP: SIG_DFL, sa_mask[0]=11111111011111110111111111111111, sa_flags=SA_RESTART|SA_SIGINFO
+SIGINT: [python3.10+0x20cc3c], sa_mask[0]=00000000000000000000000000000000, sa_flags=SA_ONSTACK
+SIGTERM: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGQUIT: SIG_DFL, sa_mask[0]=11111111011111110111111111111111, sa_flags=SA_RESTART|SA_SIGINFO
+
+
+---------------  S Y S T E M  ---------------
+
+OS:uname: Darwin 22.0.0 Darwin Kernel Version 22.0.0: Tue Jun 28 20:48:02 PDT 2022; root:xnu-8792.0.134.131.2~1/RELEASE_ARM64_T8103 arm64
+OS uptime: 0 days 0:20 hours
+rlimit (soft/hard): STACK 8176k/65520k , CORE 0k/infinity , NPROC 2666/4000 , NOFILE 10240/infinity , AS infinity/infinity , CPU infinity/infinity , DATA infinity/infinity , FSIZE infinity/infinity , MEMLOCK infinity/infinity , RSS infinity/infinity
+load average: 2.26 3.39 7.10
+
+CPU: total 8 (initial active 8) 
+
+Memory: 16k page, physical 16777216k(150560k free), swap 0k(0k free)
+
+vm_info: OpenJDK 64-Bit Server VM (15.0.6+5-MTS) for bsd-aarch64 JRE (15.0.6+5-MTS) (Zulu15.38+17-CA), built on Dec 28 2021 00:38:12 by "zulu_re" with clang Apple LLVM 12.0.0 (clang-1200.0.32.28)
+
+END.
